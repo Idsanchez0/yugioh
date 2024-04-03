@@ -90,8 +90,8 @@ class _MainExplorePage extends State<MainExplorePage> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  colors.primary500,
-                  colors.secondary300,
+                  colors.neutral500,
+                  Colors.black,
                 ],
                 begin: const FractionalOffset(0.0, 1.0),
                 end: const FractionalOffset(1.0, 0.0),
@@ -107,6 +107,7 @@ class _MainExplorePage extends State<MainExplorePage> {
                   child: Column(
                     children: [
                       Container(
+                        color: Colors.transparent,
                         width: 90 * SizeConfig.widthMultiplier,
                         child: CustomSearchField(
                             controller: _searchController,

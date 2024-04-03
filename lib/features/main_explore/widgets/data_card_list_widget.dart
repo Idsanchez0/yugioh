@@ -79,7 +79,9 @@ class _DataCardListWidget extends State<DataCardListWidget> {
                     text: TextSpan(children: [
                       TextSpan(
                           text: widget.dataCard['attribute'] == null
-                              ? 'Archetype: '
+                              ? widget.dataCard['archetype'] == null
+                                  ? 'Race: '
+                                  : 'Archetype: '
                               : 'Attribute: ',
                           style: TextStyle(
                               color: colors.primary900,
@@ -88,8 +90,11 @@ class _DataCardListWidget extends State<DataCardListWidget> {
                               height: 1.5,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: widget.dataCard['attribute'] ??
-                              widget.dataCard['archetype'],
+                          text: widget.dataCard['attribute'] == null
+                              ? widget.dataCard['archetype'] ??
+                                  widget.dataCard['race']
+                              : widget.dataCard['attribute'] ??
+                                  widget.dataCard['race'],
                           style: TextStyle(
                               color: colors.primary900,
                               fontSize: 14,

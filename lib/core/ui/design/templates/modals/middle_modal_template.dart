@@ -5,11 +5,9 @@ import '../../../utils/size/size_config.dart';
 class MiddleModalTemplate {
   middleModal(context, Widget child, Color? color, String page) {
     return showDialog(
-      barrierDismissible: page == 'main'?true:false,
+      barrierDismissible: page == 'main' ? true : false,
       context: context,
-      barrierColor: page == 'main'
-          ? Colors.black.withOpacity(0.5)
-          : Colors.white.withOpacity(0.5),
+      barrierColor: Colors.black.withOpacity(0.5),
       builder: (BuildContext context) {
         return Center(
             child: Material(
